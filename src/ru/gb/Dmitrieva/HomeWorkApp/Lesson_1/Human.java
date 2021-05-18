@@ -1,14 +1,17 @@
 package ru.gb.Dmitrieva.HomeWorkApp.Lesson_1;
 
+import java.util.Random;
+
 public class Human implements Actions {
     private String name;
     private int runDistance;
     private int jumpHeight;
 
-    public Human(String name, int distance, int jumpHeight) {
+    public Human(String name) {
         this.name = name;
-        this.runDistance = distance;
-        this.jumpHeight = jumpHeight;
+        Random rand = new Random();
+        this.runDistance = rand.nextInt(10);
+        this.jumpHeight = rand.nextInt(10);
     }
 
     public void run() {
