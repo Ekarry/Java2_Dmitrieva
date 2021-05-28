@@ -1,19 +1,16 @@
 package ru.gb.Dmitrieva.HomeWorkApp.Lesson_4;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 class Phonebook {
-    private HashMap<String, String> phonebook = new HashMap<>();
+    private final HashMap<String, String> phonebook = new HashMap<>();
 
     private ArrayList<String> getPhone(String name) {
         ArrayList<String> phones = new ArrayList<>();
 
-        Set<Map.Entry<String, String>> phonebookMap = phonebook.entrySet();
+        Set<Map.Entry<String, String>> phonebookMap = this.phonebook.entrySet();
         for (Map.Entry<String, String> entry : phonebookMap) {
-            if (entry.getValue() == name)
+            if (Objects.equals(entry.getValue(), name))
                 phones.add(entry.getKey());
         }
         return phones;
